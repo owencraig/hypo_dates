@@ -1,4 +1,5 @@
 const dateDifferences = require('./dateDifferences');
+const Date = require('./dateShim');
 const commandLineArgs = require('command-line-args');
 const validation = require('./argumentValidation');
 

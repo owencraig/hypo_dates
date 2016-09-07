@@ -1,16 +1,18 @@
+'use strict';
+
 function getDates(arrayOfDates) {
   return {
-    fromDate: Math.min(...arrayOfDates),
-    toDate: Math.max(...arrayOfDates),
+    fromDate: Math.min.apply(Math, arrayOfDates),
+    toDate: Math.max.apply(Math, arrayOfDates),
   };
 }
 
-function isValidDate(alreadyTrue, date) {
-  return alreadyTrue && date instanceof Date && date.valueOf && !isNaN(date.valueOf());
+function isValidDate(seed, date, dateType) {
+  return seed && date.valueOf && date instanceof (dateType || Date) && !isNaN(date.valueOf());
 }
 
-function validateInputs(inputs) {
-  return inputs.length >= 2 && inputs.reduce(isValidDate, true);
+function validateInputs(inputs, dateType = Date) {
+  return inputs.length >= 2 && inputs.reduce(isValidDate, true, dateType);
 }
 
 function validateArgs(args) {
