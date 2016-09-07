@@ -1,6 +1,8 @@
 {
     "extends": "airbnb",
     "rules": {
-        "no-var": 0
+        "no-var": "off",
+        "prefer-spread": "warn",
+        "strict": "off"
     }
 }
