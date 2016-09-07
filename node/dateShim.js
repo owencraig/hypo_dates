@@ -20,6 +20,7 @@ const monthMapping = {
 };
 
 function numberOfDaysInMonth(month, year) {
+  // leaning on function pointers here to make it slightly more elegant
   const resultFunction = monthMapping[month] || longMonth;
   return resultFunction(year);
 }
