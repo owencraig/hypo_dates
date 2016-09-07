@@ -15,7 +15,7 @@ const optionDefinitions = [
 
 const options = commandLineArgs(optionDefinitions);
 
-const args = validation.validateArgs(options.testDate);
+const args = validation.validateArgs(options.testDate, Date);
 
 var result;
 
